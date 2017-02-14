@@ -4,7 +4,7 @@ from functools import reduce
 from math import sqrt
 #--------------------------------core-------------------------------------------
 def main():
-  with open('data-2897-2016-11-23.json',encoding='cp1251') as data_ofc:
+  with open('data.json',encoding='cp1251') as data_ofc:
     data = json.load(data_ofc)
   x,y = float(input('x coord: ')),float(input('y coord:'))
   distance = lambda ax,ay,bx,by: sqrt( (ax-bx)**2 + (ay-by)**2 )
