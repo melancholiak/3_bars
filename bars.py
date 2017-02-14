@@ -23,6 +23,7 @@ def main():
   nearest bar(s): {}, with distance from u of {}'''.format(
                                                 ','.join(biggest),maxseats,
                                                 ','.join(smallest),minseats,
+                                                ','.join(nearest),mindist))
 #---------------------------------main------------------------------------------
 if __name__=='__main__':
   main()
