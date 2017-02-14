@@ -8,12 +8,12 @@ def main():
     data = json.load(data_ofc)
   x,y = float(input('x coord: ')),float(input('y coord:'))
   distance = lambda ax,ay,bx,by: sqrt( (ax-bx)**2 + (ay-by)**2 )
-  gimme_dist = lambda bar: distance(x,y,*bar['geoData']['coordinates'])
-  core_list1 = [i['SeatsCount'] for i in data] #list of steats
-  core_list2 = [gimme_dist(i) for i in data] #list of distances
-  maxseats = max(core_list1)
-  minseats = min(core_list1)
-  mindist  = min(core_list2)
+  distance_to_bar = lambda bar: distance(x,y,*bar['geoData']['coordinates'])
+  list_of_steats = [i['SeatsCount'] for i in data]
+  list_of_distances = [distance_to_bar(i) for i in data]
+  maxseats = max(list_of_steats)
+  minseats = min(list_of_steats)
+  mindist  = min(list_of_distances)
   biggest  = [i['Name'] for i in data if i['SeatsCount']==maxseats]
   smallest = [i['Name'] for i in data if i['SeatsCount']==minseats]
   nearest  = [i['Name'] for i in data if gimme_dist(i)==mindist]
