@@ -10,7 +10,7 @@ def main():
   distance = lambda ax,ay,bx,by: sqrt( (ax-bx)**2 + (ay-by)**2 )
   gimme_dist = lambda bar: distance(x,y,*bar['geoData']['coordinates'])
   core_list1 = [i['SeatsCount'] for i in data] #list of steats
-  core_list2 = [gimme_dist (i) for i in data] #list of deistances
+  core_list2 = [gimme_dist(i) for i in data] #list of distances
   maxseats = max(core_list1)
   minseats = min(core_list1)
   mindist  = min(core_list2)
